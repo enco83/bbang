@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form id="memberJoinForm" name="memberJoinForm" method="post" action="/member/saveMemberJoin.do">
+                    
+                   
+                    <div class="concise-inner-large">
+                        <div class="form-container">
+                            <hr>
+                            <table class="form-table has-required">
+                                <tbody><tr>
+                                    <th><i class="icon-required"></i>이름</th>
+                                    <td><input type="text" class="input-text f-size-full" id="memberNm" name="memberNm" maxlength="20" required="" data-valid-name="이름" onkeypress="jfCheckSpace(this);jfOnlyEngKor();"></td>
+                                </tr>
+                                <tr>
+                                    <th>
+	                                    <i class="icon-required"></i>아이디
+										<!-- 20170725 추가 -->
+										<div class="tooltip-item">
+											<button class="btn-memhelp btn-tooltip">?</button>
+											<div class="tooltip-content balloon-box tip-dc-info">
+												<div class="balloon-inner">
+													<ul class="memhelp_list">
+														<li> - 아이디는 6~20자의 영문, 숫자만 사용가능합니다. (공백불가)</li>
+														<li> - 일반 문자열로만 입력이 가능합니다. (이메일 형식 불가)</li>
+													</ul>
+													<button class="btn-close"><span class="text-hide">닫기</span></button>
+												</div>
+											</div><!-- /.tooltip-content -->
+										</div><!-- /.toggle-item -->
+										<!-- // 20170725 추가 -->
+									</th>
+                                    <td>
+                                        <div class="input-text-button">
+                                            <input type="text" class="input-text f-size-xl" id="loginId" name="loginId" required="" data-valid-name="아이디" data-valid-type="alphaNumeric" onkeypress="jfCheckSpace(this);jfIdCheckCancel();" placeholder="영문, 숫자 사용가능하며, 6~20자 가능">      
+                                            <a href="javascript:void(0);" class="button gray" onclick="jfIdDupCheck();">중복검사</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                    	<i class="icon-required"></i>비밀번호
+										<!-- 20170725 추가 -->
+										<div class="tooltip-item">
+											<button class="btn-memhelp btn-tooltip">?</button>
+											<div class="tooltip-content balloon-box tip-dc-info">
+												<div class="balloon-inner">
+													<ul class="memhelp_list">
+														<li>- 비밀번호는 8~16자리의 영문, 숫자,  특수문자 중 2가지 조합 필수(공백입력불가)</li>
+														<li>- 사용 가능한 특수기호 !@#$%^&amp;*()-_+=|[]{}'";:/?.&gt;,&lt;</li>
+														<li>- 3자 이상 연속 영문/숫자/특수문자 조합은 불가.</li>
+														<li>- 아이디에 포함된 문자/숫자와 연속 3자 이상 동일한 비밀번호는 설정이 불가 합니다.</li>
+													</ul>
+													<button class="btn-close"><span class="text-hide">닫기</span></button>
+												</div>
+											</div><!-- /.tooltip-content -->
+										</div><!-- /.toggle-item -->
+										<!-- // 20170725 추가 -->
+                                    </th>
+                                    <td>
+                                        <input type="password" class="input-text f-size-xl" id="pw" name="pw" required="" data-valid-name="비밀번호" data-valid-type="password" placeholder="8~16자리 / 영문, 숫자, 특수문자 중 2가지 조합 필수">    
+                                        <i class="icon-level" id="pw_level"></i><span class="pw_level2"></span>
+                                        <!-- <i class="icon-level green"></i><span>보안레벨 : 강함</span> -->
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><i class="icon-required"></i>비밀번호 확인</th>
+                                    <td>
+                                        <input type="password" class="input-text f-size-xl" id="pw2" name="pw2" required="" data-valid-name="비밀번호 확인" data-valid-type="password" placeholder="비밀번호 확인을 위해 재입력">        
+                                        <i class="icon-level" id="pw_same"></i><span class="pw_same2"></span>
+                                        <!-- <span id="pw_same"></span> -->
+                                    </td>
+                                </tr>
+                            </tbody></table>
+
+                            <hr>
+
+                            <table class="form-table has-required">
+                                <tbody><tr>
+                                    <th><i class="icon-required"></i>휴대전화</th>
+                                    <td>
+                                        <div class="form-phone">
+                                            <div class="custom-select f-size-xs">
+                                                <select id="mobile01" required="" data-valid-name="휴대전화" style="width: 102px; z-index: 10; opacity: 0;">
+                                                    <option value="" selected="">선택</option>
+                                                    
+                                                            
+                                                            <option value="010">010</option>
+                                                                                                
+                                                    
+                                                        
+                                                        
+                                                            
+                                                            <option value="011">011</option>
+                                                                                                
+                                                    
+                                                        
+                                                        
+                                                            
+                                                            <option value="016">016</option>
+                                                                                                
+                                                    
+                                                        
+                                                        
+                                                            
+                                                            <option value="017">017</option>
+                                                                                                
+                                                    
+                                                        
+                                                        
+                                                            
+                                                            <option value="018">018</option>
+                                                                                                
+                                                    
+                                                        
+                                                        
+                                                            
+                                                            <option value="019">019</option>
+                                                                                                
+                                                    
+                                                </select><span class="alt-select" style="width:102px;">선택</span>
+                                            </div>
+                                            <span>-</span>
+                                            <input type="text" class="input-text f-size-xs" id="mobile02" name="mobile02" maxlength="4" data-valid-type="numeric" required="" data-valid-name="휴대전화">
+                                            <span>-</span>
+                                            <input type="text" class="input-text f-size-xs" id="mobile03" name="mobile03" maxlength="4" data-valid-type="numeric" required="" data-valid-name="휴대전화">
+                                        </div>
+                                    </td>
+                                </tr>                               
+                                <tr>
+                                    <th><i class="icon-required"></i>SMS 수신여부</th>
+                                    <td>
+                                        <label class="radio-style"><input type="radio" name="radio-sms" value="Y"><span>수신함</span></label>
+                                        <label class="radio-style"><input type="radio" name="radio-sms" value="N"><span>수신하지 않음</span></label>
+                                        <div class="form-guide">
+                                            <p>SMS 수신에 동의하셔야 쇼핑몰에서 제공하는 다양한 혜택과 이벤트 소식을</p>
+                                            <p>SMS로 받으실 수 있습니다.</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><i class="icon-required"></i>이메일</th>
+                                    <td>
+                                        <div class="form-email-extend">
+                                            <div class="form-email f-size-full mb-10">
+                                                <input type="text" class="input-text" style="ime-mode: disabled;" id="email01" name="email01" required="" data-valid-name="이메일" data-valid-type="emailId">
+                                                <span>@</span>
+                                                <input type="text" class="input-text" id="email02" name="email02" required="" data-valid-name="이메일" readonly="readonly">
+                                            </div>
+
+                                            <div class="custom-select f-size-full">
+                                                <select id="email03" name="email03" style="width: 522px; z-index: 10; opacity: 0;">
+                                                    <option value="" selected="selected">- 이메일 선택 -</option>
+                                                    <option value="naver.com">naver.com</option>
+                                                    <option value="daum.net">daum.net</option>
+                                                    <option value="nate.com">nate.com</option>
+                                                    <option value="hotmail.com">hotmail.com</option>
+                                                    <option value="yahoo.com">yahoo.com</option>
+                                                    <option value="empas.com">empas.com</option>
+                                                    <option value="korea.com">korea.com</option>
+                                                    <option value="dreamwiz.com">dreamwiz.com</option>
+                                                    <option value="gmail.com">gmail.com</option>
+                                                    <option value="etc">직접입력</option>
+                                                </select><span class="alt-select" style="width:522px;">- 이메일 선택 -</span>
+                                            </div>
+                                        </div>
+                                    </td>                                    
+                                </tr>
+                                <tr>
+                                    <th><i class="icon-required"></i>이메일 수신여부</th>
+                                    <td>
+                                        <label class="radio-style"><input type="radio" name="radio-email" value="Y"><span>수신함</span></label>
+                                        <label class="radio-style"><input type="radio" name="radio-email" value="N"><span>수신하지 않음</span></label>
+                                        <div class="form-guide">
+                                            <p>이메일 수신에 동의하셔야 쇼핑몰에서 제공하는 다양한 혜택과 이벤트 소식을</p>
+                                            <p>이메일로 받으실 수 있습니다.</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody></table>
+
+							
+
+                            <hr class="mb-40">
+                        </div><!-- /.form-container -->
+
+                        <div class="txt-center">
+                            <a href="javascript:void(0);" class="button m-large dark-gray" style="width: 210px" onclick="jfJoinCancel();">가입취소</a>
+                            <a href="javascript:void(0);" class="button m-large yellow" onclick="jfSaveMemberJoin();" style="width: 210px">가입신청</a>
+                        </div>
+                    </div><!-- /.concise-inner -->
+                </form>
+</body>
+</html>

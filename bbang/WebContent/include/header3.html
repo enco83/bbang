@@ -1,0 +1,349 @@
+<!-- Index 페이지에 포함되는 Header 페이지를 작성하는 곳 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>header.html</title>
+<style type="text/css">
+@import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+* {
+	font-family: 'Jeju Hallasan', serif;
+}
+	body, ul{
+		margin: 0px;
+		padding: 0px;
+	}
+	ul{
+		list-style-type: none;
+	}
+	a{
+		text-decoration: none;
+	}
+	
+	/* header(로그인, 회원가입, 마이페이지, 고객센터 ) */
+	#header_line1{
+		height: 30px;
+		width: 100%;
+		background-color: #004e66;
+		box-sizing: border-box;
+		/* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+					0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+	}	
+	#header_line1_in{
+		width: 80%;
+		margin: 0 auto;	
+	}
+	#header_line1_ul {
+		float: right;
+	}
+	#header_line1_ul > li > a{
+		color: white;
+		font-size: 12px;
+		font-weight: bold;
+		height: 30px;
+		display: inline-block;
+		padding: 0 10px;
+		line-height: 30px;
+	}
+	#header_line1_ul > li{
+		float: left; /* 태그들을 좌측, 우측 유동배치 */
+		height: 30px;
+		position: relative;
+	}
+	#header_line1_ul > li:hover{ /* li태그에 마우스를 올렸을 때 동작하는 내용 */
+		background-color: #fcbe32;
+	}
+	#header_line1_ul > li:hover #header_line1_dropdown { 
+	/* #header_line1_ul > li hover했을 때 #header_line1_dropdown을 어떻게 제어할것인가 */
+		display: block;
+	}
+	#header_line1_dropdown {
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+					0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		display: none; /* 존재자체를 없애는 것 */
+		position: absolute;
+	}
+	#header_line1_dropdown > a {
+		display: block;
+		font-size: 12px;   
+		background-color: #004e66;
+		color: white;
+		padding: 5px 10px;
+		border-bottom: 1px solid white;
+		width: 92px;
+	}
+	#header_line1_dropdown > a:hover{
+		background-color: #fcbe32;
+		text-decoration: underline; 
+	}
+	#header_line1_mypage {
+		width: 92px;
+		text-align: center;
+	}	
+	/* 로고이미지, 검색창 */
+	#header_line2 {
+		width: 70%;
+		height: 80px;
+		margin: 15px auto;
+		box-sizing: border-box;
+	}
+	#header_line2 img{
+		display: inline-block;
+		margin-top: 8px;
+	}
+	
+	/* 네비게이션 메뉴바 */
+	#header_line3{
+		width: 100%;
+		height: 49px;
+		background-color: #2b90d9;
+		box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2),
+					0 4px 20px 0 rgba(0, 0, 0, 0.19);
+		box-sizing: border-box;	/* 크기고정 */	
+	}
+	#header_line3_ul > li {
+		float: left;
+		box-sizing: border-box;
+		height: 49px;
+		position: relative;
+	}
+	#header_line3_ul > li:hover {
+		background-color: #fcbe32;
+		border-top: 5px solid white;
+	}
+	
+	#header_line3_ul > li > a {
+		width: 98px;
+		color: white;
+		line-height: 50px;
+		font-size: 15px;
+		padding: 0 45px;
+		display: inline-block;
+		text-align: center;
+	}
+	#header_line3_in{
+		width: 70%;
+		margin: 0 auto;	
+	}
+	
+	/* key dropdown */
+	#header_line3_dropdown_key > a {
+		background-color: #566270;
+		display: block;
+		color: white;
+		width: 178px;
+		text-align: center;
+		padding: 5px 5px;
+		line-height: 31px;
+		font-size: 15px; 
+	}
+	#header_line3_dropdown_key > a:hover {
+		background-color: #A593E0;
+	}
+	#header_line3_dropdown_key{
+		position: absolute;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+					0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		box-sizing: border-box;		
+		display: none;
+	}
+	#header_line3_ul > li:hover #header_line3_dropdown_key{
+		display: block;
+		top: 44px;
+	}
+	
+	/* class dropdown */
+	#header_line3_dropdown_classic > a {
+		background-color: #566270;
+		display: block;
+		color: white;
+		width: 178px;
+		text-align: center;
+		padding: 5px 5px;
+		line-height: 31px;
+		font-size: 15px; 
+		
+	}
+	#header_line3_dropdown_classic > a:hover {
+		background-color: #A593E0;
+		
+	}
+	#header_line3_dropdown_classic {
+		position: absolute;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+					0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		box-sizing: border-box;		
+		display: none;
+	}
+	#header_line3_ul > li:hover #header_line3_dropdown_classic{
+		display: block;
+		top: 44px;
+	}
+	
+	/* android dropdown */
+	#header_line3_dropdown_Android >li >a {
+		background-color: #566270;
+		display: block;
+		color: white;
+		width: 178px;
+		text-align: center;
+		padding: 5px 5px;
+		line-height: 31px;
+		font-size: 15px;
+		list-style-type: none;
+	}
+	#header_line3_dropdown_Android >li >a:hover {
+		background-color: #A593E0;
+	}
+	#header_line3_dropdown_Android {
+		display: none;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+					0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		box-sizing: border-box;	
+		position: absolute;	
+		
+	}
+	#header_line3_ul > li:hover #header_line3_dropdown_Android{
+		display: block;
+		top: 44px;
+	}
+	
+	/* refur dropdown */
+	#header_line3_dropdown_refur ul > li >a {		
+		display: block;
+		color: white;
+		width: 178px;
+		text-align: center;
+		padding: 5px 5px;
+		line-height: 31px;
+		font-size: 15px;
+		list-style-type: none;
+	}
+	#header_line3_dropdown_refur {
+		display: none;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+					0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		box-sizing: border-box;	
+		position: absolute;	
+	}
+	#header_line3_ul > li:hover #header_line3_dropdown_refur{
+		display: block;
+		top: 44px;
+	}
+	#header_line3_dropdown_refur > ul > li {
+		background-color: #566270;
+		position: relative;
+	}
+	#header_line3_dropdown_refur > ul> li:hover {
+		background-color: #A593E0;
+	}
+	
+	/* refur dropdown _ dropdown2 */
+	#header_line3_dropdown2_refur {
+		position:absolute;
+		left: 188px;
+		top: 0px;
+		display: none;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+					0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		box-sizing: border-box;	
+	}
+	#header_line3_dropdown2_refur > a {
+		display: block;
+		background-color: #566270;
+		color: white;
+		width: 178px;
+		text-align: center;
+		padding: 5px 5px;
+		line-height: 31px;
+		font-size: 15px;
+		list-style-type: none;
+	}
+	#header_line3_dropdown2_refur >a:hover{
+		background-color: #A593E0;
+	}
+	#header_line3_dropdown_refur> ul >li:hover #header_line3_dropdown2_refur{
+		display: block;
+	}
+
+</style>
+</head>
+<body>
+	<header>
+		<div id="header_wrap">
+			<div id="header_line1">
+				<div id="header_line1_in">
+					<ul id="header_line1_ul">
+						<li><a href="">로그인</a></li>
+						<li><a href="">회원가입</a></li>
+						<li>
+							<a id="header_line1_mypage" href="">마이페이지▼</a>
+							<div id="header_line1_dropdown">
+								<a href="#">포인트 조회</a>
+								<a href="#">보관함</a>
+								<a href="#">쪽지함</a>
+								<a href="#">회원정보</a>
+							</div>
+						</li>	
+						<li><a href="">고객센터</a></li>
+					</ul>
+				</div>
+			</div>
+			<div id="header_line2">
+				<a href="#">
+				<img id="header_logo" src="../img/4_Grayscale_logo_on_transparent_116x73.png" alt="로고"></a>
+			</div>
+			<div id="header_line3">
+				<div id="header_line3_in">
+					<ul id="header_line3_ul">
+						<li>
+							<a href="">낚시채비</a>
+							<div id="header_line3_dropdown_key">
+								<a href="">기본장비</a>
+				 	    		<a href="">낚시대</a>
+				 	    		<a href="">낚시줄</a>
+				 	    		<a href="">미끼</a>
+							</div>
+						</li>
+				 	    <li>
+				 	    	<a href="">바다낚시</a>
+				 	    	<div id="header_line3_dropdown_classic">
+				 	    		<a href="">동해</a>
+				 	    		<a href="">서해</a>
+				 	    		<a href="">남해</a>
+				 	    	</div>
+				 	    </li>
+					    <li><a href="">민물낚시</a>
+					    	<ul id="header_line3_dropdown_Android">
+					    		<li><a href="">패스포트</a></li>
+					    		<li><a href="">프리브</a></li>
+					    	</ul>
+					    </li>	
+				 	    <li><a href="">커뮤니티</a></li>
+				 	    <li>
+				 	    	<a href="">중고제품</a>
+				 	    	<div id="header_line3_dropdown_refur">
+				 	    	<ul>
+				 	    		<li><a href="">KEY시리즈</a></li>
+				 	    		<li>
+				 	    			<a href="">CLASSIC</a>
+				 	    			<div id="header_line3_dropdown2_refur">
+				 	    				<a href="">Q20</a>
+						 	    		<a href="">Q10</a>
+						 	    		<a href="">Q5</a>
+				 	    			</div>
+				 	    		</li>
+				 	    		<li><a href="">Android</a></li>
+				 	    		<li><a href="">그외제품</a></li>
+				 	    	</ul>
+				 	    	</div>
+				 	    </li>
+				 	    <li><a href="">예약정보</a></li>
+					</ul>
+				</div>
+				
+			</div>
+		</div>	
+	</header>
+</body>
+</html>

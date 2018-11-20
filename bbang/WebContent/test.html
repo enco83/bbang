@@ -1,0 +1,218 @@
+<!-- Index 페이지에 포함되는 Header 페이지를 작성하는 곳 -->
+<!--float : left, right
+  태그들을 배치할때 사용
+  : 태그들을 항상 왼편이나 오른편으로 배치시킬수 있다.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>header.html</title>
+<style type="text/css">
+@ import ;
+*{
+    font-family: 'Hanna', sans-serif;
+
+}
+
+    
+    body,ul{
+  margin:0px;
+  padding : 0px;
+  
+    }
+    ul{
+  list-style-type:none;
+    }
+    a{
+  text-decoration:none;
+    }
+    
+    #header_line1{
+  height : 30px;
+  width :100%;
+  background-color : #1c140d;
+  box-sizing : border-box;
+  box-shadow : 0 4px 8px rgba(0, 0, 0, 0.2),
+   0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    #header_line1_in{
+  width  : 70%;
+  margin : 0 auto;
+    
+    }
+    #header_line1_ul{
+  
+  float:right;
+    }
+    #header_line1_ul > li > a{
+  
+  color:white;
+  font-size:12px;
+  font-weight:bold;
+  height:30px;
+  display:inline-block;
+  padding: 0 10px;
+  line-height:30px;
+    }
+    #header_line1_ul > li{
+  float : left; /* 태그들을 좌측, 우측 유동배치 */
+  height:30px;
+  position: relative;
+    }
+    #header_line1_ul > li:hover{ /* li 태그에 마우스를 올렸을때 동작하는 내용*/
+  background-color:#cbe86b;
+    }
+    
+    /* header_line1_ul > li:hover 했을때 #header_line1_dropdown을 어떻게 변경할지 적용 */
+    
+    #header_line1_ul > li:hover #header_line1_dropdown{
+  display: block;
+  
+    
+    }
+    #header_line1_dropdown >a {
+  display: block;
+  font-size: 12px;
+  /* padding-left : 10px; */  /* 좌측 안쪽여백 */
+  background-color: #1c140d ;
+  color: white;
+  padding: 5px 10px; /* 위아래 여백 5px ,좌우측 여백 0px */
+  
+  /* padding: 5px 0px 5px 10px; */
+  border-bottom: 1px solid white;
+  width:82px;
+    }
+    #header_line1_dropdown >a:hover{
+  background-color: #cbe86b;
+  color: blue;
+  text-decoration: underline;
+    
+    }
+    
+    
+    
+    
+    
+    #header_line1_dropdown{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
+   0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* 숨기는 효과 */
+  display: none;  /* 아예 존재자체를 없애는 효과 */
+  /* visibility: false; 존재는 있으나 안보이게 하는 효과 */
+  position: absolute;
+    }
+    
+    #header_line1_mypage{
+  width: 82px;
+  text-align: center;
+    
+    }
+    #header_line2{
+   width: 70%;
+   height : 80px;
+   margin : 15px auto;
+   box-sizing : border-box;
+    
+    
+    }
+    #header_line2 img {
+  display : inline-block;
+  margin-top: 8px;
+    }
+    
+    /* 네비게이션 메뉴바*/
+    #header_line3{
+  width:100%;
+  height:49px;
+  background-color:#1c140d ;
+  box-sizing : border-box;
+  box-shadow : 0 4px 8px rgba(0, 0, 0, 0.2),
+   0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+  
+    }
+    #haader_line3_ul > li{
+  float:left;
+  box-sizing: border-box;
+  height: 49px;
+  
+    
+    }
+    #haader_line3_ul > li > a {
+  width:210px;
+  color: white;
+  line-height: 49px;
+  font-size: 20px;
+  padding: 0 13px;
+  display: inline-block;
+  text-align: center;
+    
+    }
+    #haader_line3_ul > li:hover {
+  background-color: #cbe86b;
+  border-top: 5px solid white;
+    }
+    #header_line3_in{
+  width  : 70%;
+  margin : 0 auto;
+    }
+    
+
+</style>
+</head>
+<body>
+    <header>
+  <div id="header_wrap">
+  <div id="header_line1">
+  <div id="header_line1_in">
+  <ul id="header_line1_ul">
+  <li><a href=""> 로그인</a></li>
+  <li><a href=""> 회원가입</a></li>
+  <li><a id="header_line1_mypage" href=""> 마이페이지▼</a>
+  <div id="header_line1_dropdown">
+  <a href="#">주문/배송조회</a>
+  <a href="#">장바구니</a>
+  <a href="#">위시리스트</a>
+  <a href="#">회원정보</a>
+  </div>
+  </li>
+  
+  
+  
+  
+  
+  
+  <li><a href=""> 고객센터</a></li>  
+  </ul>
+  </div>
+  </div>
+  <div id="header_line2">
+  <a href="#">
+  <img id="header_logo" src="../img/1_Primary_logo_on_transparent_150x73.png" alt="로고.">
+  </a>
+  
+  </div>
+  <div id="header_line3">
+  <div id="header_line3_in">
+  <ul id="haader_line3_ul">
+  <li><a href="#">신선한 원두커피</a></li>
+  <li><a href="#">신선한 산지별원두</a></li>
+  <li><a href="#">바리스타 커피용품</a></li>
+  <li><a href="#">간편한 테이크아웃</a></li>
+  <li><a href="#">힐링타임 티&티용품</a></li>
+  
+  
+  
+  </ul>
+  </div>
+  
+  
+  </div>  
+  </div>
+    
+    
+    </header>
+
+</body>
+</html>

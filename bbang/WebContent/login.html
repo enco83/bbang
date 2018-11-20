@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>kkoki Login</title>
+<style type="text/css">
+@import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+* {
+	font-family: 'Jeju Hallasan', serif;
+}
+	
+</style>
+</head>
+<body>
+<div id="kakaoWrap" class="version">
+  <div id="pageLogin" data-role="page">
+    <header id="kakaoHead">
+  <h1>
+    <a href="/weblogin/account" id="kakaoServiceLogo" class="link_logo">
+      <img alt="kakao" class="logo_kakao" height="18" src="/assets/weblogin/logo_kakao-3965387b517201720cca8ba08c248d83.png" width="57" />
+      <span class="service_kakao">로그인</span>
+    </a>
+  </h1>
+  
+</header>
+
+    <hr class="hide">
+
+    <main id="kakaoContent">
+      <div id="cMain">
+        <!-- 팝업창영역 -->
+        <div class="dimmed_layer"></div>
+        <!-- // 팝업창영역 -->
+        <article id="mArticle">
+
+          <!-- // 로그인 -->
+          <h2 id="kakaoBody" class="screen_out">카카오계정 로그인</h2>
+          <div class="info_etc">
+                <img alt="Kakao_accounts_banner" class="img_etc" height="402" src="/assets/ko/weblogin/kakao_accounts_banner-e20bbd4d330e24a3ea8463f49ffd2778.png" width="540" />
+          </div>
+          <div class="cont_login">
+            <h3 class="tit_kakao">
+              <img alt="Kakao" class="img_kakao" height="20" src="/assets/techin/img_kakao-a5bad5527aa2558b58167a7353b7eafe.png" width="64" />
+            </h3>
+            <form method="post" id="login-form" data-error-target=".desc_error">
+  <fieldset>
+    <legend class="screen_out">카카오계정 로그인 폼</legend>
+    <input type="hidden" name="type" value="w"/>
+    <input type="hidden" name="p" value="sa3MUlxxK1Ya1FHa_VcvUyPNdm0ybct9D1T59-CCoNg"/>
+      <input type="hidden" name="continue" value='https://accounts.kakao.com/weblogin/account/info'>
+
+    <!-- phone field -->
+    <div class="wrap_nation" id="loginPhoneField" style="display: none;">
+      <div class="login_inp login_nation "><!-- class 'opt_open' 추가시 메뉴 펼쳐짐 -->
+          <label for="inpNation2" class="link_date lab_txt">+82<span class="ico_login ico_arr"></span></label>
+          <input class="opt_select" id="inpNation2" name="iso_code" value="82" autocomplete="off" />
+          <span class="txt_bar"></span>
+
+          
+      </div>
+
+      <div class="login_inp "><!-- 툴팁 보기 버튼 클릭시 inp_on 추가 -->
+        <label for="loginPhone" class="screen_out">전화번호</label><!-- 2018-03-30 수정 -->
+        <input type="text" id="loginPhone" name="phone_number" class="inp_login" autocomplete="off"
+               placeholder="전화번호"
+               validator="phonenumber"
+               data-error-invlid="잘못된 형식의 전화번호 입니다. 정확한 전화번호를 입력해주세요.">
+        <button type="button" class="btn_help ico_login"><span class="ir_wa">관련 설명 보기/닫기</span></button>
+      </div>
+    </div>
+
+    <!-- email field -->
+    <div class="login_inp" id="loginEmailField" >
+      <label for="loginEmail" class="screen_out">이메일 또는 전화번호</label><!-- 2018-02-13 수정 --><!-- 2018-03-30 수정 -->
+      <input id="loginEmail" type="text" class="inp_login inp_email" name="email" value="" autocomplete="off"
+             placeholder="이메일 또는 전화번호"
+             validator="email_or_phone"
+             data-error-empty="이메일 또는 전화번호를 입력해주세요."
+             data-error-invalid="이메일 또는 전화번호 형식이 올바르지 않습니다.">
+      
+    </div>
+
+    <!-- password -->
+    <div class="login_inp">
+      <label for="loginPw" class="screen_out">비밀번호</label>
+      <input type="password" id="loginPw" class="inp_login" name="password" autocomplete="off"
+             placeholder="비밀번호(4~32자리)"
+             validator="password"
+             data-error-empty="카카오계정 비밀번호를 입력해주세요."
+             data-error-invalid="비밀번호가 올바르지 않습니다.">
+    </div>
+
+  
+
+    <button type="submit" class="btn_login submit">로그인</button>
+    <div class="info_user">
+      <div class="join_user">
+        <a href="/weblogin/create_account?continue=https%3A%2F%2Faccounts.kakao.com%2Fweblogin%2Faccount%2Finfo"  id="signUp">회원가입</a>
+      </div>
+      <ul class="list_user">
+        <li>
+          <a href="/weblogin/find_account_guide?continue=https%3A%2F%2Faccounts.kakao.com%2Fweblogin%2Faccount%2Finfo" >카카오계정 찾기</a><span class="txt_bar">|</span>
+        </li>
+        <li>
+          <a href="/weblogin/find_password?continue=https%3A%2F%2Faccounts.kakao.com%2Fweblogin%2Faccount%2Finfo" >비밀번호 재설정</a>
+        </li>
+      </ul>
+    </div>
+  </fieldset>
+</form>
+
+
+          </div>
+
+        </article>
+
+
+
+
+
+      </div>
+    </main>
+    <hr class="hide">
+
+    <footer id="kakaoFoot">
+    <h2 class="screen_out">서비스 이용정보</h2>
+    <div class="footer_link">
+        <a href="http://kakao.com/notices" class="link_info">공지사항</a>
+        <span class="txt_bar"></span>
+        <a href="http://kakao.com/policy/terms" class="link_info">이용약관</a>
+        <span class="txt_bar"></span>
+        <a href="http://kakao.com/policy/privacy" class="link_info">개인정보 처리방침</a>
+        <span class="txt_bar"></span>
+        <a href="http://kakao.com/policy/oppolicy" class="link_info">운영정책</a>
+        <span class="txt_bar"></span>
+        
+    </div>
+    <div class="footer_info">
+      <small class="txt_copyright">Copyright © <a href="https://www.kakaocorp.com/" class="link_kakao">Kakao Corp.</a> All rights reserved.</small>
+    </div>
+</footer>
+
+  </div>
+</div>
+</body>
+</html>
